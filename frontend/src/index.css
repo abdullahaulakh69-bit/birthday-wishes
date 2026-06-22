@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-pink-primary: #ff4f8b;
+  --color-purple-primary: #8b5cf6;
+  --color-gold: #ffd700;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+:root {
+  --bg-primary: #fff5f8;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a68;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --gradient-hero: linear-gradient(135deg, #fff5f8 0%, #fce7f3 40%, #ede9fe 100%);
+}
+
+.dark {
+  --bg-primary: #0f0a1a;
+  --bg-secondary: #1a1228;
+  --text-primary: #f8f4ff;
+  --text-secondary: #c4b5fd;
+  --glass-bg: rgba(26, 18, 40, 0.75);
+  --glass-border: rgba(139, 92, 246, 0.3);
+  --gradient-hero: linear-gradient(135deg, #0f0a1a 0%, #1a0a2e 50%, #2d1b4e 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(255, 79, 139, 0.12);
+}
+
+.dark .glass-card {
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ff4f8b, #8b5cf6, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff4f8b, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.875rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(255, 79, 139, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 79, 139, 0.5);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid #ffd700;
+  outline-offset: 3px;
+}
+
+.section-padding {
+  padding: 5rem 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff4f8b !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff4f8b, #8b5cf6);
+  border-radius: 4px;
+}
