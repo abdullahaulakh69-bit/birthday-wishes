@@ -1,0 +1,26 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+const STORAGE_KEY = 'birthday-theme';
+
+export function useTheme() {
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === 'undefined') return 'light';
+    return localStorage.getItem(STORAGE_KEY) || 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem(STORAGE_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
+
+  return { theme, toggleTheme, isDark: theme === 'dark' };
+}

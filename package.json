@@ -1,0 +1,10 @@
+{
+  "name": "birthday-surprise",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev:clean --prefix frontend",
+    "dev:clean": "npm run dev:clean --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend"
+  }
+}

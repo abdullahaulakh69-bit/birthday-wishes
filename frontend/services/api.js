@@ -1,0 +1,11 @@
+async function fetchJson(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`API error: ${res.status}`);
+  return res.json();
+}
+
+export const api = {
+  getWish: () => fetchJson('/api/wish'),
+  getPhotos: () => fetchJson('/api/photos'),
+  getQuotes: () => fetchJson('/api/quotes'),
+};
