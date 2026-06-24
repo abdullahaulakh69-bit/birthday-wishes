@@ -17,10 +17,26 @@ export const quotes = [
   'Here is to laughter, love, and cake!',
 ];
 
-export const photos = Array.from({ length: 15 }, (_, i) => ({
-  id: i + 1,
-  title: `Memory ${i + 1}`,
-  caption: `A beautiful moment we shared together #${i + 1}`,
-  url: `https://picsum.photos/seed/birthday${i + 1}/800/600`,
-  thumbnail: `https://picsum.photos/seed/birthday${i + 1}/400/300`,
-}));
+export const photos = [
+  {
+    id: 1,
+    title: 'Classic Salman',
+    caption: 'Sharp, stylish, and always ready to shine.',
+    url: '/photos/salman-1.png',
+    thumbnail: '/photos/salman-1.png',
+  },
+  {
+    id: 2,
+    title: 'Looking Ahead',
+    caption: 'A moment of calm confidence — the future looks bright.',
+    url: '/photos/salman-2.png',
+    thumbnail: '/photos/salman-2.png',
+  },
+  {
+    id: 3,
+    title: 'That Smile',
+    caption: 'The smile that lights up every room. Happy Birthday, Salman!',
+    url: '/photos/salman-3.png',
+    thumbnail: '/photos/salman-3.png',
+  },
+];

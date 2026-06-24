@@ -13,13 +13,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const PLACEHOLDER_PHOTOS = Array.from({ length: 15 }, (_, i) => ({
-  id: i + 1,
-  title: `Memory ${i + 1}`,
-  caption: `A beautiful moment #${i + 1}`,
-  url: `https://picsum.photos/seed/gallery${i + 1}/800/600`,
-  thumbnail: `https://picsum.photos/seed/gallery${i + 1}/400/300`,
-}));
+import { photos as MEMORY_PHOTOS } from '@/lib/data/wishes';
+
+const PLACEHOLDER_PHOTOS = MEMORY_PHOTOS;
 
 export default function MemoryGallery() {
   const [photos, setPhotos] = useState(PLACEHOLDER_PHOTOS);
@@ -64,7 +60,7 @@ export default function MemoryGallery() {
             }}
             pagination={{ clickable: true }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
-            loop
+            loop={photos.length > 3}
             className="pb-12"
           >
             {photos.map((photo) => (
@@ -84,7 +80,7 @@ export default function MemoryGallery() {
                     width={400}
                     height={300}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="border-t border-white/20 p-5">
                     <h3 className="font-display text-lg font-semibold">{photo.title}</h3>
