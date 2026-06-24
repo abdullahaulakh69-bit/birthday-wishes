@@ -22,7 +22,6 @@
     "swiper": "^12.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.15.12",
     "@tailwindcss/postcss": "^4.3.1",
     "eslint": "^9",
     "eslint-config-next": "^15.3.3",

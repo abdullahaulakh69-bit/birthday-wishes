@@ -3,6 +3,8 @@
   command = "npm run build"
   publish = "out"
 
+# Static export — do NOT use @netlify/plugin-nextjs or publish ".next"
+
 [build.environment]
   NODE_VERSION = "20"
   NETLIFY = "true"
