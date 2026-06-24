@@ -2,6 +2,7 @@
 
 import { Component } from 'react';
 import dynamic from 'next/dynamic';
+import { FRIEND_NAME } from '@/utils/constants';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ErrorBoundary extends Component {
         >
           <span className="text-6xl">🎂</span>
           <h1 className="text-3xl font-bold" style={{ color: '#ff4f8b' }}>
-            Happy Birthday Bestie!
+            Happy Birthday {FRIEND_NAME}!
           </h1>
           <p style={{ color: '#5c5470' }}>Please refresh to load your surprise.</p>
           <button

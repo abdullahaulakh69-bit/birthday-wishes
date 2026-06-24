@@ -14,8 +14,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: 'Happy Birthday 🎉',
-  description: 'A magical birthday surprise',
+  title: 'Happy Birthday Ch Salman Haider Sandhu 🎉',
+  description: 'A magical birthday surprise for Ch Salman Haider Sandhu — 25 June 2026',
 };
 
 export const viewport = {

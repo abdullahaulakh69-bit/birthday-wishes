@@ -4,9 +4,9 @@ export const COLORS = {
   gold: '#FFD700',
 };
 
-export const FRIEND_NAME = process.env.NEXT_PUBLIC_FRIEND_NAME || 'Bestie';
+export const FRIEND_NAME = process.env.NEXT_PUBLIC_FRIEND_NAME || 'Ch Salman Haider Sandhu';
 
-export const BIRTHDAY_DATE = process.env.NEXT_PUBLIC_BIRTHDAY_DATE || '2026-06-22';
+export const BIRTHDAY_DATE = process.env.NEXT_PUBLIC_BIRTHDAY_DATE || '2026-06-25';
 
 export const TIMELINE_EVENTS = [
   { id: 1, title: 'First Meeting', emoji: '👋', description: 'The day our beautiful friendship began.' },
@@ -21,18 +21,18 @@ export const TIMELINE_EVENTS = [
   { id: 10, title: 'Best Memory', emoji: '💫', description: 'Every moment with you is the best memory.' },
 ];
 
-export const LETTER_CONTENT = `My Dearest Bestie,
+export const LETTER_CONTENT = `Dear Ch Salman Haider Sandhu,
 
 On this special day, I want you to know how incredibly lucky I feel to have you in my life. From the very first moment we met, you brought light, laughter, and love into my world.
 
 You have been my confidant, my partner in crime, and my greatest cheerleader. Through every high and every low, you have stood by my side with a heart full of kindness and a smile that could brighten the darkest days.
 
-Today, we celebrate YOU — the most amazing, beautiful, and wonderful person I know. May this year bring you everything your heart desires and more.
+Today, we celebrate YOU — the most amazing, wonderful person I know. May this year bring you everything your heart desires and more.
 
-Thank you for being the best friend anyone could ever ask for. ❤️`;
+Happy Birthday, Salman! Wishing you endless joy and success. ❤️`;
 
 export const GIFT_MESSAGE =
-  'May every dream you have come true. Happy Birthday Bestie! ❤️';
+  'May every dream you have come true. Happy Birthday Ch Salman Haider Sandhu! ❤️';
 
 export const FALLBACK_QUOTES = [
   'You deserve endless happiness.',

@@ -1,5 +1,5 @@
 export const wishData = {
-  name: process.env.FRIEND_NAME || 'Bestie',
+  name: process.env.FRIEND_NAME || 'Ch Salman Haider Sandhu',
   message:
     'Happy Birthday! Wishing you happiness, success, love, and laughter.',
 };

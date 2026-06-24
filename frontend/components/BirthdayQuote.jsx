@@ -10,7 +10,7 @@ const BONUS_QUOTES = [
   'You are literally the coolest person alive.',
   'The universe is lucky to have you!',
   'Plot twist: YOU are the main character today.',
-  'Certified bestie status: LEGENDARY.',
+  'Certified legend status: LEGENDARY.',
   'Scientists confirm: your smile cures sadness.',
 ];
 
