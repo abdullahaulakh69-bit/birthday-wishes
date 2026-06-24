@@ -1,7 +1,7 @@
 'use client';
 
 import { Component } from 'react';
-import dynamic from 'next/dynamic';
+import HomePage from '@/components/HomePage';
 import { FRIEND_NAME } from '@/utils/constants';
 
 class ErrorBoundary extends Component {
@@ -39,25 +39,6 @@ class ErrorBoundary extends Component {
     return this.props.children;
   }
 }
-
-function LoadingScreen() {
-  return (
-    <div
-      className="flex min-h-screen flex-col items-center justify-center gap-4"
-      style={{ background: 'linear-gradient(160deg, #fff0f6, #ede9fe, #fff8e7)' }}
-    >
-      <span className="text-5xl">🎉</span>
-      <p className="text-lg font-semibold" style={{ color: '#ff4f8b' }}>
-        Loading your surprise...
-      </p>
-    </div>
-  );
-}
-
-const HomePage = dynamic(() => import('@/components/HomePage'), {
-  ssr: false,
-  loading: () => <LoadingScreen />,
-});
 
 export default function AppShell() {
   return (
