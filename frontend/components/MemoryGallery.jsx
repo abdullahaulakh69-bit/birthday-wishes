@@ -6,29 +6,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import Image from 'next/image';
-import { api } from '@/services/api';
+import { photos as MEMORY_PHOTOS } from '@/lib/data/wishes';
 import SectionWrapper from '@/components/SectionWrapper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { photos as MEMORY_PHOTOS } from '@/lib/data/wishes';
-
-const PLACEHOLDER_PHOTOS = MEMORY_PHOTOS;
-
 export default function MemoryGallery() {
-  const [photos, setPhotos] = useState(PLACEHOLDER_PHOTOS);
-  const [loading, setLoading] = useState(true);
+  const photos = MEMORY_PHOTOS;
   const [fullscreen, setFullscreen] = useState(null);
-
-  useEffect(() => {
-    api
-      .getPhotos()
-      .then(setPhotos)
-      .catch(() => setPhotos(PLACEHOLDER_PHOTOS))
-      .finally(() => setLoading(false));
-  }, []);
 
   useEffect(() => {
     const handleKey = (e) => {
@@ -40,12 +27,7 @@ export default function MemoryGallery() {
 
   return (
     <SectionWrapper id="gallery" badge="📸 Memories" title="Memory Gallery" subtitle="Precious moments captured forever">
-      {loading ? (
-        <div className="flex justify-center py-12">
-          <div className="loader-ring" />
-        </div>
-      ) : (
-        <div className="relative px-2 sm:px-10">
+      <div className="relative px-2 sm:px-10">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
@@ -106,7 +88,6 @@ export default function MemoryGallery() {
             <HiChevronRight size={24} />
           </button>
         </div>
-      )}
 
       <AnimatePresence>
         {fullscreen && (

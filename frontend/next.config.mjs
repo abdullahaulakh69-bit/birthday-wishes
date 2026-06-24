@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Custom cache only for local Windows + OneDrive; use default .next on Vercel/Netlify/CI
+// Custom cache only for local Windows + OneDrive; use default .next on deploy
 const useLocalCache =
   process.platform === 'win32' &&
   !process.env.VERCEL &&
@@ -12,10 +12,11 @@ const useLocalCache =
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   ...(useLocalCache
     ? { distDir: 'node_modules/.cache/birthday-surprise-next' }
     : {}),
-  outputFileTracingRoot: __dirname,
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -23,13 +24,7 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '/**',
-      },
-    ],
+    unoptimized: true,
   },
 };
 

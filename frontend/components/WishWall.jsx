@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { api } from '@/services/api';
+import { quotes } from '@/lib/data/wishes';
 import { FALLBACK_QUOTES } from '@/utils/constants';
 import SectionWrapper from '@/components/SectionWrapper';
 
@@ -10,10 +10,7 @@ export default function WishWall() {
   const [wishes, setWishes] = useState(FALLBACK_QUOTES);
 
   useEffect(() => {
-    api
-      .getQuotes()
-      .then((quotes) => setWishes(quotes.slice(0, 8)))
-      .catch(() => setWishes(FALLBACK_QUOTES));
+    setWishes((quotes.length ? quotes : FALLBACK_QUOTES).slice(0, 8));
   }, []);
 
   return (
